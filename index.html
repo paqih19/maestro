@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAHAHAHA</title>
+
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #090d16;
+    color: #e8edf7;
+    min-height: 100vh;
+    background-image:
+        radial-gradient(ellipse at 15% 10%, #11254a 0%, transparent 38%),
+        radial-gradient(ellipse at 90% 80%, #101a35 0%, transparent 35%);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    width: min(1000px, 90%);
+    margin: auto;
+    padding: 28px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #4d91ff;
+}
+
+.nav-contact {
+    font-size: 13px;
+    color: #c8d6ef;
+    border: 1px solid #283752;
+    padding: 10px 17px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.nav-contact:hover {
+    background: #172b4e;
+    border-color: #4d91ff;
+}
+
+.container {
+    width: min(650px, 92%);
+    margin: 30px auto 60px;
+}
+
+.profile-card {
+    padding: 34px;
+    background: rgba(17, 24, 39, 0.88);
+    border: 1px solid #243149;
+    border-radius: 25px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+}
+
+.profile-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.avatar {
+    width: 105px;
+    height: 105px;
+    border-radius: 28px;
+    padding: 4px;
+    background: linear-gradient(135deg, #58a1ff, #6c5ce7);
+    transform: rotate(-3deg);
+}
+
+.avatar img,
+.avatar-fallback {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+}
+
+.avatar img {
+    object-fit: cover;
+    display: block;
+}
+
+.avatar-fallback {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #17253d;
+    color: #69a9ff;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.online {
+    font-size: 12px;
+    color: #9ce7c1;
+    background: #142c29;
+    padding: 9px 13px;
+    border-radius: 30px;
+}
+
+.online span {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #56e39f;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.greeting {
+    color: #69a9ff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: clamp(29px, 6vw, 43px);
+    line-height: 1.25;
+    letter-spacing: -1.5px;
+    margin-bottom: 15px;
+}
+
+h1 span {
+    color: #69a9ff;
+}
+
+.bio {
+    color: #9daac0;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 500px;
+}
+
+.profile-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 12px;
+    background: #151e2f;
+    border: 1px solid #26344c;
+    border-radius: 10px;
+    color: #c2cce0;
+    font-size: 11px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    color: #08111f;
+    background: #69a9ff;
+}
+
+.btn-primary:hover {
+    background: #91bdff;
+}
+
+.btn-secondary {
+    color: #dce7f8;
+    background: #1a2538;
+    border: 1px solid #2d3d58;
+}
+
+.btn-secondary:hover {
+    background: #24334c;
+}
+
+.divider {
+    height: 1px;
+    background: #263148;
+    margin: 32px 0;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.section-heading span {
+    color: #61728e;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.about-text {
+    font-size: 13px;
+    color: #9daac0;
+    line-height: 2;
+}
+
+.hobby-heading {
+    margin-top: 30px;
+}
+
+.hobbies {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.hobby {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 12px;
+    background: #131d2e;
+    border: 1px solid #26344b;
+    border-radius: 15px;
+    transition: 0.25s;
+}
+
+.hobby:hover {
+    transform: translateY(-3px);
+    border-color: #4b83d0;
+    background: #17243a;
+}
+
+.hobby-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #202e46;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+.hobby h3 {
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.hobby p {
+    color: #8998b0;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid #263148;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    color: #71819a;
+    font-size: 10px;
+}
+
+.footer strong {
+    color: #9ec7ff;
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 20px 0;
+    }
+
+    .container {
+        margin-top: 15px;
+    }
+
+    .profile-card {
+        padding: 23px 19px;
+        border-radius: 21px;
+    }
+
+    .avatar {
+        width: 85px;
+        height: 85px;
+        border-radius: 23px;
+    }
+
+    .avatar img,
+    .avatar-fallback {
+        border-radius: 19px;
+    }
+
+    .online {
+        font-size: 10px;
+    }
+
+    .hobbies {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 15px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/maestro/" class="logo">
+            my<span>profile.</span>
+        </a>
+
+        <a href="#contact" class="nav-contact">Hubungiii Ajaaaa ↗</a>
+    </nav>
+
+    <main class="container">
+        <section class="profile-card">
+
+            <div class="profile-top">
+                <div class="avatar">
+                    <img src="/maestro/foto/1.jpg" alt="Foto profil"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <span class="avatar-fallback">P</span>
+                </div>
+            </div>
+
+            <p class="greeting">HALOOO, KENALAN DULU DONGG 👋</p>
+
+            <h1>
+                Tak Kenal Maka Tak Sayang, Udah Kenal Jangan Cuma Di Pandang,
+                Kenalin The Maestro Tengah Lapangan
+                <span>PAQIHHH 🤙🤙🤙.</span>
+            </h1>
+
+            <p class="bio">HAHAHAHAHAHAA.</p>
+
+            <div class="buttons" id="contact">
+                <a href="https://instagram.com/p4qihh_"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn btn-primary">Instagram ↗</a>
+
+                <a href="mailto:paqih2009@gmail.com"
+                   class="btn btn-secondary">Email aku ✉</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section-heading">
+                <h2>Sedikit tentang aku</h2>
+            </div>
+
+            <p class="about-text">
+                P.
+            </p>
+
+            <div class="section-heading hobby-heading">
+                <h2>Hoby</h2>
+            </div>
+
+           
+            <div class="hobbies">
+                <div class="hobby">
+                    <div class="hobby-icon">🎲</div>
+                <div>
+                    <h3>Main</h3>
+                    <p>Main bareng teman, seru-seruan tanpa batas 😎</p>
+                </div>
+            </div>
+
+            <div class="hobby">
+                    <div class="hobby-icon">⚽</div>
+                <div>
+                    <h3>Olahraga</h3>
+                    <p>Gerak terus, semangat terus, josjisss! 🔥</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Dibuat dengan 💙 oleh <strong>Saya</strong></p>
+                <p>© <span id="year"></span> My Profile</p>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+javascript
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
+
+    </script>
+</body>
+</html>
